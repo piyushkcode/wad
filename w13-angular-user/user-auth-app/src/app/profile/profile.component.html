@@ -1,0 +1,41 @@
+<!--
+<h2>Profile</h2>
+<div *ngIf="currentUser">
+  <p>Username: {{ currentUser.username }}</p>
+  <p>Email: {{ currentUser.email }}</p>
+</div>
+-->
+
+<div class="profile-container">
+  <div class="header">
+    <h2>Profile</h2>
+    <button (click)="logout()" class="logout-btn" [disabled]="isLoading">
+      {{ isLoading ? 'Logging out...' : 'Logout' }}
+    </button>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Loading profile data...</p>
+  </div>
+
+  <div *ngIf="!isLoading">
+    <div class="current-user">
+      <h3>Your Profile</h3>
+      <div class="user-card">
+        <p><strong>Username:</strong> {{ currentUser?.username }}</p>
+        <p><strong>Email:</strong> {{ currentUser?.email }}</p>
+      </div>
+    </div>
+
+    <div class="all-users">
+      <h3>All Users</h3>
+      <div class="users-grid">
+        <div class="user-card" *ngFor="let user of allUsers">
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

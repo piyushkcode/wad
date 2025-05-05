@@ -1,0 +1,96 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background: #f4f7fb;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #6c63ff, #3f3dff);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.container h2 {
+    color: #6c63ff;
+    margin-bottom: 15px;
+}
+
+/* Introduction */
+.intro p {
+    line-height: 1.6;
+}
+
+/* Learning Paths */
+.paths ol {
+    list-style: decimal inside;
+    font-size: 1.1rem;
+    margin-left: 20px;
+}
+.paths li {
+    margin: 8px 0;
+}
+
+/* Categories */
+.categories .category-list {
+    display: flex;
+    gap: 15px;
+}
+.categories .category-list span {
+    background: #e0e0ff;
+    color: #3f3dff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Courses Table */
+.courses table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.courses th, .courses td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.courses th {
+    background: #6c63ff;
+    color: white;
+}
+.courses tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #777;
+    background: white;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}

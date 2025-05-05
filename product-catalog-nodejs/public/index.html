@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Catalog</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    input, select {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .name {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+    .price {
+      color: #27ae60;
+      font-weight: 500;
+    }
+    .category {
+      font-size: 13px;
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Product Catalog</h1>
+
+<div class="controls">
+  <input type="text" id="searchInput" placeholder="Search products...">
+  <select id="categoryFilter">
+    <option value="">All Categories</option>
+  </select>
+</div>
+
+<div class="catalog" id="catalog"></div>
+
+<script>
+  let allProducts = [];
+
+  function displayProducts(products) {
+    const catalog = document.getElementById('catalog');
+    catalog.innerHTML = '';
+    products.forEach(product => {
+      const card = document.createElement('div');
+      card.className = 'product';
+      card.innerHTML = `
+        <img src="images/${product.image}" alt="${product.name}" />
+        <div class="name">${product.name}</div>
+        <div class="price">$${product.price.toFixed(2)}</div>
+        <div class="category">${product.category}</div>
+      `;
+      catalog.appendChild(card);
+    });
+  }
+
+  function updateFilters() {
+    const searchVal = document.getElementById('searchInput').value.toLowerCase();
+    const categoryVal = document.getElementById('categoryFilter').value;
+
+    const filtered = allProducts.filter(p =>
+      p.name.toLowerCase().includes(searchVal) &&
+      (categoryVal === '' || p.category === categoryVal)
+    );
+
+    displayProducts(filtered);
+  }
+
+  fetch('/api/products')
+    .then(res => res.json())
+    .then(data => {
+      allProducts = data;
+      displayProducts(data);
+
+      // Populate category dropdown
+      const categories = [...new Set(data.map(p => p.category))];
+      const dropdown = document.getElementById('categoryFilter');
+      categories.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.textContent = cat;
+        dropdown.appendChild(opt);
+      });
+    });
+
+  document.getElementById('searchInput').addEventListener('input', updateFilters);
+  document.getElementById('categoryFilter').addEventListener('change', updateFilters);
+</script>
+
+</body>
+</html>

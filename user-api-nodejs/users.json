@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "phone": "+1-555-1234",
+      "role": "Software Engineer",
+      "location": "New York, USA"
+      
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "phone": "+44-20-7946-0958",
+      "role": "Product Manager",
+      "location": "London, UK"
+      
+    },
+    {
+      "id": 3,
+      "name": "Charlie Nguyen",
+      "email": "charlie.nguyen@example.com",
+      "phone": "+61-2-9374-4000",
+      "role": "UX Designer",
+      "location": "Sydney, Australia"
+      
+    },
+    {
+      "id": 4,
+      "name": "Diana López",
+      "email": "diana.lopez@example.com",
+      "phone": "+52-55-1234-5678",
+      "role": "Data Analyst",
+      "location": "Mexico City, Mexico"
+      
+    },
+    {
+      "id": 5,
+      "name": "Ethan Patel",
+      "email": "ethan.patel@example.com",
+      "phone": "+91-22-1234-5678",
+      "role": "DevOps Engineer",
+      "location": "Mumbai, India"
+      
+    },
+    {
+      "id": 6,
+      "name": "Fatima Ibrahim",
+      "email": "fatima.ibrahim@example.com",
+      "phone": "+971-4-123-4567",
+      "role": "Cybersecurity Specialist",
+      "location": "Dubai, UAE"
+      
+    }
+  ]
+  

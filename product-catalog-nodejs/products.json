@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "price": 79.99,
+      "image": "headphones.jpg",
+      "category": "Audio"
+    },
+    {
+      "id": 2,
+      "name": "Smart Watch",
+      "price": 149.99,
+      "image": "smartwatch.avif",
+      "category": "Wearables"
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 999.99,
+      "image": "laptop.avif",
+      "category": "Computers"
+    },
+    {
+      "id": 4,
+      "name": "Camera",
+      "price": 499.00,
+      "image": "camera.avif",
+      "category": "Photography"
+    },
+    {
+      "id": 5,
+      "name": "Electric Scooter",
+      "price": 320.00,
+      "image": "scooter.avif",
+      "category": "Transport"
+    },
+    {
+      "id": 6,
+      "name": "Gaming Console",
+      "price": 299.99,
+      "image": "console.avif",
+      "category": "Gaming"
+    },
+    {
+      "id": 7,
+      "name": "Bluetooth Speaker",
+      "price": 59.99,
+      "image": "speaker.avif",
+      "category": "Audio"
+    },
+    {
+      "id": 8,
+      "name": "Smartphone",
+      "price": 799.99,
+      "image": "smartphone.avif",
+      "category": "Mobile"
+    },
+    {
+      "id": 9,
+      "name": "Tablet",
+      "price": 499.99,
+      "image": "tablet.avif",
+      "category": "Mobile"
+    },
+    {
+      "id": 10,
+      "name": "Smart TV",
+      "price": 1199.99,
+      "image": "tv.avif",
+      "category": "Home Entertainment"
+    }
+  ]
+  

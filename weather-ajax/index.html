@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App (AJAX + JSON)</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    h2 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 12px;
+      width: 80%;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px;
+      width: 85%;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+    .error {
+      color: red;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Weather App </h2>
+    <input type="text" id="cityInput" placeholder="Enter city name (e.g., mumbai)">
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function getWeather() {
+      const city = document.getElementById("cityInput").value.trim().toLowerCase();
+      const resultDiv = document.getElementById("result");
+
+      resultDiv.innerHTML = "Fetching weather data...";
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "weather.json", true);
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          const weather = data[city];
+          if (weather) {
+            resultDiv.innerHTML = `
+              <strong>Weather in ${city.charAt(0).toUpperCase() + city.slice(1)}:</strong><br>
+              Temperature: ${weather.temperature}<br>
+              Humidity: ${weather.humidity}<br>
+              Condition: ${weather.condition}
+            `;
+          } else {
+            resultDiv.innerHTML = "<p class='error'>City not found in the weather data.</p>";
+          }
+        } else {
+          resultDiv.innerHTML = "<p class='error'>Error fetching weather data.</p>";
+        }
+      };
+      xhr.send();
+    }
+  </script>
+
+</body>
+</html>

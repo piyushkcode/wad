@@ -1,0 +1,89 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout Containers */
+header, section, footer {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 900px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1, h2 {
+    color: #d35400;
+}
+
+/* Centering Welcome Section */
+#welcome {
+    text-align: center;
+}
+
+/* Menu Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8c291;
+}
+
+/* Images in Menu */
+td img {
+    width: 100px;  /* Adjust as necessary */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Cuisine List */
+#cuisines ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#cuisines li::before {
+    content: "🍽️ ";
+}
+
+/* Restaurant Details */
+#details p {
+    margin: 5px 0;
+}
+
+/* Card Styling for Sections */
+.card {
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#top-dishes, #available-cuisines {
+    margin-bottom: 30px;
+}
+
+/* Rating Styling */
+td {
+    font-weight: bold;
+}
+
+td:nth-child(4) {
+    color: #3498db;
+}

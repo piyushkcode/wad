@@ -1,0 +1,13 @@
+[
+    { "id": 1, "name": "John Doe", "designation": "Software Engineer", "department": "Dept:Engineering", "salary": "75000", "profileImage": "john_doe.jpg" },
+    { "id": 2, "name": "Jane Smith", "designation": "HR Manager", "department": "Human Resources", "salary": "60000", "profileImage": "jane_smith.jpg" },
+    { "id": 3, "name": "Mary Johnson", "designation": "Marketing Specialist", "department": "Marketing", "salary": "70000", "profileImage": "mary_johnson.jpg" },
+    { "id": 4, "name": "James Brown", "designation": "Software Engineer", "department": "Engineering", "salary": "80000", "profileImage": "james_brown.jpg" },
+    { "id": 5, "name": "Patricia Williams", "designation": "HR Manager", "department": "Human Resources", "salary": "65000", "profileImage": "patricia_williams.jpg" },
+    { "id": 6, "name": "Michael Miller", "designation": "Marketing Specialist", "department": "Marketing", "salary": "72000", "profileImage": "michael_miller.jpg" },
+    { "id": 7, "name": "Elizabeth Garcia", "designation": "Software Engineer", "department": "Engineering", "salary": "77000", "profileImage": "elizabeth_garcia.jpg" },
+    { "id": 8, "name": "David Martinez", "designation": "HR Manager", "department": "Human Resources", "salary": "63000", "profileImage": "david_martinez.jpg" },
+    { "id": 9, "name": "Emily Anderson", "designation": "Software Engineer", "department": "Engineering", "salary": "75000", "profileImage": "emily_anderson.jpg" },
+    { "id": 10, "name": "William Thomas", "designation": "Marketing Specialist", "department": "Marketing", "salary": "71000", "profileImage": "william_thomas.jpg" }
+]
+  

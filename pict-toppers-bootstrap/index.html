@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Institute of Computer Technology</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .navbar {
+            background-color: #007bff;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 500px;
+            background-image: url('images/pict.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.63); /* Translucent black overlay */
+            z-index: 1;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+
+        .footer {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: white;
+        }
+
+        .footer a:hover {
+            color: #f8f9fa;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Top Navbar -->
+<nav class="navbar navbar-expand-lg navbar-blue">
+
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+            <img src="images/logo.jpg" alt="PICT Logo" style="height: 40px;" />
+            <span>Pune Institute of Computer Technology</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Departments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Placements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Admissions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">News & Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section (Banner) -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <p>Welcome to Pune Institute of Computer Technology</p>
+        </div>
+    </section>
+
+<!-- Year-Wise Toppers' Statistics -->
+<div class="container my-5">
+    <h1 class="text-center mb-4">Year-Wise Toppers' Statistics</h1>
+
+    <!-- 2024 Toppers -->
+    <h3 class="mt-4">Toppers of 2023</h3>
+    <div class="row">
+        <!-- Computer Science -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Aarya Kulkarni</h5>
+                    <p class="card-text">Department: Computer Science</p>
+                    <p class="card-text">Percentage: 94.6%</p>
+                </div>
+            </div>
+        </div>
+        <!-- E&TC -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Pranav Deshmukh</h5>
+                    <p class="card-text">Department: E&TC</p>
+                    <p class="card-text">Percentage: 93.1%</p>
+                </div>
+            </div>
+        </div>
+        <!-- IT -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Isha Naik</h5>
+                    <p class="card-text">Department: Information Technology</p>
+                    <p class="card-text">Percentage: 92.8%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2023 Toppers -->
+    <h3 class="mt-5">Toppers of 2022</h3>
+    <div class="row">
+        <!-- Computer Science -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Rahul Mehta</h5>
+                    <p class="card-text">Department: Computer Science</p>
+                    <p class="card-text">Percentage: 95.2%</p>
+                </div>
+            </div>
+        </div>
+        <!-- E&TC -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Sneha Patil</h5>
+                    <p class="card-text">Department: E&TC</p>
+                    <p class="card-text">Percentage: 96%</p>
+                </div>
+            </div>
+        </div>
+        <!-- IT -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Tushar Khedekar</h5>
+                    <p class="card-text">Department: Information Technology</p>
+                    <p class="card-text">Percentage: 92%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2022 Toppers -->
+    <h3 class="mt-5">Toppers of 2021</h3>
+    <div class="row">
+        <!-- Computer Science -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Meenal Shah</h5>
+                    <p class="card-text">Department: Computer Science</p>
+                    <p class="card-text">Percentage: 93.8%</p>
+                </div>
+            </div>
+        </div>
+        <!-- E&TC -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Omkar Jadhav</h5>
+                    <p class="card-text">Department: E&TC</p>
+                    <p class="card-text">Percentage: 91.6%</p>
+                </div>
+            </div>
+        </div>
+        <!-- IT -->
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Topper Photo">
+                <div class="card-body">
+                    <h5 class="card-title">Kajal More</h5>
+                    <p class="card-text">Department: Information Technology</p>
+                    <p class="card-text">Percentage: 97%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <!-- Footer -->
+  <!-- Footer -->
+<footer class="footer text-white mt-5">
+    <div class="container">
+      <div class="row text-start">
+        <!-- Address Column -->
+        <div class="col-md-4 mb-3">
+          <h5>Address</h5>
+          <p>
+            Survey No. 27, Near Trimurti Chowk,<br>
+            Dhankwadi, Pune - 411043<br>
+            <a href="https://goo.gl/maps/dXJuzDqRCFgD7RXA6" target="_blank" class="text-white text-decoration-underline">View on Google Maps</a>
+          </p>
+        </div>
+  
+        <!-- Contact Column -->
+        <div class="col-md-4 mb-3">
+          <h5>Contact</h5>
+          <p><strong>Phone:</strong> +91 20 24371101</p>
+          <p><strong>Fax:</strong> +91 20 24364741</p>
+          <p><strong>Email:</strong> <a href="mailto:registrar@pict.edu" class="text-white text-decoration-underline">registrar@pict.edu</a></p>
+        </div>
+  
+        <!-- Social Media Column -->
+        <div class="col-md-4 mb-3">
+          <h5>Follow Us</h5>
+          <p>
+            <a href="#" class="text-white text-decoration-underline">Facebook</a><br>
+            <a href="#" class="text-white text-decoration-underline">Twitter</a><br>
+            <a href="#" class="text-white text-decoration-underline">Instagram</a><br>
+            <a href="#" class="text-white text-decoration-underline">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+      <hr class="border-light">
+      <p class="text-center mb-0">&copy; 2025 Pune Institute of Computer Technology</p>
+    </div>
+  </footer>
+  
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

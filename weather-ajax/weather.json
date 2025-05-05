@@ -1,0 +1,9 @@
+{
+    "mumbai": { "temperature": "32°C", "humidity": "70%", "condition": "Sunny" },
+    "delhi": { "temperature": "28°C", "humidity": "60%", "condition": "Hazy" },
+    "chennai": { "temperature": "35°C", "humidity": "75%", "condition": "Hot" },
+    "kolkata": { "temperature": "30°C", "humidity": "80%", "condition": "Cloudy" },
+    "bangalore": { "temperature": "25°C", "humidity": "65%", "condition": "Rainy" },
+    "pune": { "temperature": "22°C", "humidity": "50%", "condition": "Cool" }
+  }
+  

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Styled To-Do List</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .task-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"] {
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 300px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 380px;
+    }
+
+    li {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.2s;
+    }
+
+    li:hover {
+      transform: scale(1.01);
+    }
+
+    .task-text {
+      font-size: 1rem;
+      color: #333;
+      flex: 1;
+    }
+
+    .task-actions button {
+      margin-left: 0.5rem;
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    .task-actions button:hover {
+      background-color: #c0c0c0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📝 My To-Do List</h1>
+
+  <div class="task-form">
+    <input type="text" id="taskInput" placeholder="Enter a task..." />
+    <button onclick="addTask()">Add</button>
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    const apiUrl = 'http://localhost:3001/tasks';
+
+    window.onload = () => getTasks();
+
+    function getTasks() {
+      fetch(apiUrl)
+        .then(res => res.json())
+        .then(tasks => {
+          const list = document.getElementById('taskList');
+          list.innerHTML = '';
+          tasks.forEach(renderTask);
+        });
+    }
+
+    function addTask() {
+      const input = document.getElementById('taskInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      })
+      .then(res => res.json())
+      .then(task => {
+        renderTask(task);
+        input.value = '';
+      });
+    }
+
+    function renderTask(task) {
+      const list = document.getElementById('taskList');
+      const li = document.createElement('li');
+      li.setAttribute('data-id', task.id);
+
+      const span = document.createElement('span');
+      span.className = 'task-text';
+      span.textContent = task.text;
+
+      const actions = document.createElement('div');
+      actions.className = 'task-actions';
+
+      const editBtn = document.createElement('button');
+      editBtn.textContent = 'Edit';
+      editBtn.onclick = () => editTask(task.id, span);
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Delete';
+      deleteBtn.onclick = () => deleteTask(task.id, li);
+
+      actions.appendChild(editBtn);
+      actions.appendChild(deleteBtn);
+
+      li.appendChild(span);
+      li.appendChild(actions);
+      list.appendChild(li);
+    }
+
+    function editTask(id, span) {
+      const newText = prompt("Edit task:", span.textContent);
+      if (newText === null || newText.trim() === '') return;
+
+      fetch(`${apiUrl}/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: newText.trim() })
+      })
+      .then(res => res.json())
+      .then(updated => {
+        span.textContent = updated.text;
+      });
+    }
+
+    function deleteTask(id, li) {
+      fetch(`${apiUrl}/${id}`, {
+        method: 'DELETE'
+      }).then(() => {
+        li.remove();
+      });
+    }
+  </script>
+
+</body>
+</html>
+
+/*npx json-server --watch db.json --port 3001*/

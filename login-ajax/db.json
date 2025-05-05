@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "832a",
+      "name": "Piyush Kinekar",
+      "email": "pkinekar2004@gmail.com",
+      "mobile": "9557635573",
+      "dob": "2025-05-22",
+      "city": "Pune",
+      "address": "sdvsdvsdf",
+      "password": "greens"
+    },
+    {
+      "id": "a572",
+      "name": "Piyush Kinekar",
+      "email": "rockpk2004@gmail.com",
+      "mobile": "9557635573",
+      "dob": "2025-05-19",
+      "city": "Pune",
+      "address": "csdc",
+      "password": "hi"
+    }
+  ]
+}

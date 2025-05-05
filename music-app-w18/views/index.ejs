@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎵 Song List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container my-5">
+    <h1 class="text-center mb-4">🎵 Song List <span class="badge bg-primary"><%= count %></span></h1>
+
+    <div class="row mb-4">
+      <!-- Filter Form -->
+      <div class="col-md-12">
+        <form action="/" method="GET" class="d-flex">
+          
+          <!-- Music Director Filter -->
+          <input name="music_director" class="form-control me-2" placeholder="Music Director" value="<%= music_director || '' %>">
+          
+          <!-- Singer Filter -->
+          <input name="singer" class="form-control me-2" placeholder="Singer" value="<%= singer || '' %>">
+          
+          <!-- Film Filter -->
+          <input name="film" class="form-control me-2" placeholder="Film" value="<%= film || '' %>">
+          
+          <!-- Filter Button -->
+          <button type="submit" class="btn btn-primary">Filter</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <% if (error) { %> 
+      <div class="alert alert-danger">
+        <strong>Error:</strong> <%= error %>
+      </div>
+    <% } %>
+
+    <!-- Song List -->
+    <table class="table table-bordered table-hover table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Song Name</th>
+          <th>Film</th>
+          <th>Music Director</th>
+          <th>Singer</th>
+          <th>Actor</th>
+          <th>Actress</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% songs.forEach(song => { %>
+          <tr>
+            <td><%= song.Songname %></td>
+            <td><%= song.Film %></td>
+            <td><%= song.Music_director %></td>
+            <td><%= song.singer %></td>
+            <td><%= song.Actor || '-' %></td>
+            <td><%= song.Actress || '-' %></td>
+            <td>
+              <a href="/delete/<%= song.Songname %>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this song?')">Delete</a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <!-- Add Song Form -->
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Add New Song</h4>
+        <form action="/add" method="POST" class="border p-3 bg-white rounded shadow-sm">
+          <div class="mb-2"><input name="Songname" class="form-control" placeholder="Song Name" required></div>
+          <div class="mb-2"><input name="Film" class="form-control" placeholder="Film Name" required></div>
+          <div class="mb-2"><input name="Music_director" class="form-control" placeholder="Music Director" required></div>
+          <div class="mb-2"><input name="singer" class="form-control" placeholder="Singer" required></div>
+          <button type="submit" class="btn btn-success w-100">Add Song</button>
+        </form>
+      </div>
+
+      <!-- Update Actor/Actress Form -->
+      <div class="col-md-6">
+        <h4>Update Actor & Actress</h4>
+        <form action="/update" method="POST" class="border p-3 bg-white rounded shadow-sm">
+          <div class="mb-2"><input name="Songname" class="form-control" placeholder="Song Name" required></div>
+          <div class="mb-2"><input name="Actor" class="form-control" placeholder="Actor"></div>
+          <div class="mb-2"><input name="Actress" class="form-control" placeholder="Actress"></div>
+          <button type="submit" class="btn btn-primary w-100">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.product-card img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover; /* This ensures the image covers the area of the box */
+  border-radius: 8px;
+}
+
+.pagination .page-link {
+  color: #007bff;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.filters {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters h5 {
+  margin-bottom: 15px;
+}
+
+.filters .form-check {
+  margin-bottom: 10px;
+}
+
+/* Container for products */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Default to 3 items per row */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);  /* 2 items per row for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr;  /* 1 item per row for small screens */
+  }
+}

@@ -1,0 +1,61 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm/
+
+# Output files
+dist/
+build/
+coverage/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variable files
+.env
+.env.test
+.env.production
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Mac/Linux trash
+.Trashes

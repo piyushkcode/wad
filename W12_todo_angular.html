@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS To-Do List</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
+    input, button { padding: 10px; margin: 5px 0; }
+    ul { list-style-type: none; padding: 0; }
+    li { background: #eee; margin-bottom: 10px; padding: 10px; display: flex; align-items: center; justify-content: space-between; }
+    .edit-input { width: 60%; }
+  </style>
+</head>
+<body>
+
+<div class="container" ng-controller="TodoController">
+  <h2>AngularJS To-Do List</h2>
+
+  <input type="text" ng-model="newTask" placeholder="Add a new task" />
+  <button ng-click="addTask()">Add</button>
+
+  <ul>
+    <li ng-repeat="task in tasks">
+      <div ng-if="!task.editing">
+        <span>{{ task.name }}</span>
+        <div>
+          <button ng-click="editTask(task)">Edit</button>
+          <button ng-click="deleteTask($index)">Delete</button>
+        </div>
+      </div>
+
+      <div ng-if="task.editing">
+        <input type="text" class="edit-input" ng-model="task.name" />
+        <div>
+          <button ng-click="saveTask(task)">Save</button>
+          <button ng-click="cancelEdit(task)">Cancel</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  angular.module('todoApp', [])
+    .controller('TodoController', function($scope) {
+      $scope.tasks = [];
+      $scope.newTask = "";
+
+      $scope.addTask = function() {
+        if ($scope.newTask.trim()) {
+          $scope.tasks.push({ name: $scope.newTask.trim(), editing: false });
+          $scope.newTask = "";
+        }
+      };
+
+      $scope.deleteTask = function(index) {
+        $scope.tasks.splice(index, 1);
+      };
+
+      $scope.editTask = function(task) {
+        task.originalName = task.name;
+        task.editing = true;
+      };
+
+      $scope.saveTask = function(task) {
+        task.editing = false;
+      };
+
+      $scope.cancelEdit = function(task) {
+        task.name = task.originalName;
+        task.editing = false;
+      };
+    });
+</script>
+
+</body>
+</html>

@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/bookstore', {
+mongoose.connect('mongodb://127.0.0.1:27017/bookstore', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

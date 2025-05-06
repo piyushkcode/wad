@@ -1,0 +1,21 @@
+open oracle vm virtal box manager
+click new > create new VM , VM1 , ,LINUX ,UBUNTU -> use an existing virtual hard disk file(ubuntu)
+SIMILarly for VM2,
+
+go to FILE > preferences >network>select NAT NETWORK
+similarly for both VM , settings>network>nat network
+
+run both vm
+
+login:vagrant/pict123
+pass : same as user
+
+ifconfig(to know ip adrresss)
+ls ( to list exisitng files)
+touch filenmae.txt (to create file )
+cat filename.txt (to check contents of file)
+nano filename.txt > ctrl+s>ctrl+x
+
+then check if content there or not > cat command
+
+scp filename.txt ubuntu@ipaddress:/home/ubuntu
